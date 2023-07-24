@@ -1,4 +1,6 @@
 import random
+
+
 def get_choice(choices, correct):
   message = "\nPress "
   for item in choices:
@@ -16,12 +18,15 @@ def get_choice(choices, correct):
       print("\n" + choices[choice][1])
       print("\nGAME OVER!")
       exit()
+
+
 # Welcome and first part of the game (which is set)
 print("Welcome to Treasure Island!")
 input("Press Enter to begin.")
 get_choice({"R": ["to go RIGHT", "You fell into a hole!"],
             "L": ["to go LEFT", "Phew! You avoided a very big hole!"]},
           "L")
+
 # Next part of the game where the player has to choose the correct amount of time to wait (random)
 messages = {"S": ["You were swallowed by a whale!", "You picked the right moment!"], "W": ["You were eaten by a giant roc!", "Patience is a virtue."]}
 waiting = random.randint(1, 2)
@@ -34,6 +39,7 @@ for number in range(waiting+1):
   get_choice({"S": ["to SWIM", swim_message],
               "W": ["to WAIT", wait_message]},
             next_part)
+  
 # Last part of the game where the player has to choose between 4 doors (random)
 print("\nYou have come to a cave with 4 mysterious doors.")
 doors = {"Y": "yellow", "B": "blue", "R": "red", "G": "green"}

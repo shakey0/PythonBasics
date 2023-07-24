@@ -21,7 +21,7 @@ def is_valid_num(num, type_):
     return True
 
 
-def get_num_from_user(type_):
+def get_from_user(type_):
     while True:
         num_of = input(f"\nHow many {type_}s would you like in your password?\n")
         if is_valid_num(num_of, type_):
@@ -30,9 +30,9 @@ def get_num_from_user(type_):
 
 def get_char_quantities():
     while True:
-        num_of_letters = get_num_from_user("letter")
-        num_of_numbers = get_num_from_user("number")
-        num_of_symbols = get_num_from_user("symbol")
+        num_of_letters = get_from_user("letter")
+        num_of_numbers = get_from_user("number")
+        num_of_symbols = get_from_user("symbol")
         total = int(num_of_letters) + int(num_of_numbers) + int(num_of_symbols)
         if 6 <= total <= 30:
             break

@@ -110,7 +110,14 @@ user_choice = ""
 computer_choice = random.choice(choices)
 print(computer_choice)
 
-a_string = "Hello World"
+print(ord("A"))
+print(ord("b"))
+print(ord("z"))
 
-a_string.replace()
-print(a_string)
+print(chr(123))
+
+index = 23
+
+index += 3 if index < 23 else -23
+
+print(index)
