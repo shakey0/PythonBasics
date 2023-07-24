@@ -110,15 +110,15 @@ while True:
            "\nTo add a new encrypted word or message, press A + Enter."
            "\nTo exit, press Q + Enter.")
     while True:
-        choice = input("\nChoose an option: ").lower()
-        if choice == "v":
+        choice = input("\nChoose an option: ")
+        if choice.lower() == "v":
             view_all_encrypted_words()
-        elif choice == "a":
+        elif choice.lower() == "a":
             add_encrypted_word()
             break
         elif choice in encrypted_words.keys():
             see_encrypted_word(choice)
-        elif choice == "q":
+        elif choice.lower() == "q":
             exit()
         else:
             print("Invalid command.")
