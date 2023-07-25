@@ -101,13 +101,34 @@ def see_encrypted_word(password):
     word = (encrypt_word(get_word_info[0], get_word_info[1]*-1, get_word_info[2]*-1))
     print(f"\nYour message:  {word}")
 
+def delete_encrypted_word():
+    while True:
+        enter_password = input("\nEnter the password for the word, or press M + Enter for the main menu.\n"
+                               "\nPassword: ")
+        if enter_password in encrypted_words.keys():
+            confirm = input("\nAre you sure you want to delete this word/message?"
+                            "\nPress Y + Enter for YES or any other key + Enter for NO.\n")
+            if confirm.lower() == "y":
+                encrypted_words.pop(enter_password)
+                print("\nYour word/message was removed.")
+            else:
+                print("\nYour word/message was not removed.")
+            input("\nPress Enter to continue.")
+            break
+        elif enter_password.lower() == "m":
+            break
+        else:
+            print("\nPassword doesn't match any items.")
+
 print("\nWelcome to Caeser Cipher!")
 add_encrypted_word()
 while True:
-    print(f"\nYou currently have {len(encrypted_words)} encrypted words or messages."
+    print(f"\n--------------------- MAIN MENU ---------------------\n"
+          f"\nYou currently have {len(encrypted_words)} encrypted words/messages."
            "\nTo view them all in their encrypted forms, press V + Enter."
            "\nTo see a specific word or message, type in its password."
            "\nTo add a new encrypted word or message, press A + Enter."
+           "\nTo delete an encrypted word or message, press D + Enter."
            "\nTo exit, press Q + Enter.")
     while True:
         choice = input("\nChoose an option: ")
@@ -115,6 +136,9 @@ while True:
             view_all_encrypted_words()
         elif choice.lower() == "a":
             add_encrypted_word()
+            break
+        elif choice.lower() == "d":
+            delete_encrypted_word()
             break
         elif choice in encrypted_words.keys():
             see_encrypted_word(choice)
