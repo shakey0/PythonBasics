@@ -1,4 +1,5 @@
 from list_of_animals import animal_list
+import os
 
 hangman = ["  +---+  ",
            "  |   |  ",
@@ -73,6 +74,7 @@ word = animal_list().lower()
 blanked_word = "_" * len(word)
 blanked_word = add_letters_to_guess(word, blanked_word, " ")
 while len(hangman_set) > 0 and word != blanked_word:
+    os.system('clear')
     letter = get_guess(blanked_word)
     blanked_word = update_guess(word, blanked_word, letter)
 if word == blanked_word:
