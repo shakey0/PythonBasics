@@ -1,3 +1,7 @@
+# Supposing a dice with an even number of sides it thrown
+# The numbers of the dice are always opposites of lowest-highest (1-6, 2-5, 3-4)
+# Given that the bottom side is not visible, how many dots can be seen according to the top side?
+
 def total_amount_visible(top_num, num_of_sides):
     all_sides = []
     counter = 1
@@ -16,8 +20,4 @@ def total_amount_visible(top_num, num_of_sides):
     total_sum -= all_sides_rev[index_of]
     return total_sum
 
-list_of_empty = [[4, 5], [3, 2], [9, 4]]
-
-largest_space = [item[1] - item[0] for item in list_of_empty]
-
-print(largest_space)
+print(total_amount_visible(5, 8))

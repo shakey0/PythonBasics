@@ -19,9 +19,8 @@ def encode_or_decode(key, message, do="encode"):
         coded_message.append(coded_letter)
     return "".join(coded_message)
 
-print("")
 
-print("\nFirst input to ENcode:")
+print("\n\nFirst input to ENcode:")
 print("Original string = sammylovesfightingzebrasinthebush\n" + "ENCODED string = " +
       encode_or_decode("fantasticfantasy", "sammylovesfightingzebrasinthebush") + "\n")
 print("Second input to DEcode:")
@@ -30,9 +29,7 @@ print("Encoded string = EBRRHSQLXEAFWVDFCWIXZNBEFCDVXZMEV\n" + "DECODED string =
 
 print("\nFirst input to ENcode:")
 print("Original string = ittakesmanyyearstobewise\n" + "ENCODED string = " +
-      encode_or_decode("fantasticfantasy", "ittakesmanyyearstobewise") + "\n")
+      encode_or_decode("easypeasylemonsqueezy", "ittakesmanyyearstobewise") + "\n")
 print("Second input to DEcode:")
-print("Encoded string = FDDBTXERBCHHXBNEDQZXKFEX\n" + "DECODED string = " +
-      encode_or_decode("fantasticfantasy", "FDDBTXERBCHHXBNEDQZXKFEX", "decode") + "\n")
-
-print("")
+print("Encoded string = TPPBRACGBIDDABQCPHZANTCA\n" + "DECODED string = " +
+      encode_or_decode("easypeasylemonsqueezy", "TPPBRACGBIDDABQCPHZANTCA", "decode") + "\n")

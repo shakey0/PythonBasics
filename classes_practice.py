@@ -74,4 +74,4 @@ guests = Guest()
 for number in range(100):
     guests.create_guest()
 
-guests.print_arranged_guest_data("name")
+guests.print_arranged_guest_data("favourite animal")
