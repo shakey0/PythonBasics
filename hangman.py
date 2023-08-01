@@ -77,6 +77,7 @@ while len(hangman_set) > 0 and word != blanked_word:
     os.system('clear')
     letter = get_guess(blanked_word)
     blanked_word = update_guess(word, blanked_word, letter)
+os.system('clear')
 if word == blanked_word:
     print(f"\nThe word was: {word}! Excellent work!")
     print_hangman(blanked_word)
