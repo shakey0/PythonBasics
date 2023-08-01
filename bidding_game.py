@@ -60,11 +60,17 @@ def setup_round():
     return adjective + " " + animal.lower()
 
 def get_player_bid(animal_, name, money, old_player_bid, highest_bid=0):
+    os.system('clear')
+    print(f"\nCalling: {name.upper()}")
+    input("\nPress Enter.")
     if money <= highest_bid or money == 0:
+        os.system('clear')
+        print(f"\n{name.upper()}! You don't have enough money to compete!")
+        input("\nPress Enter for next bidder.")
         return False
     while True:
         os.system('clear')
-        print(f"\nCalling: {name.upper()}     Remaining money: £{f_number(money)}")
+        print(f"\n{name.upper()}     Remaining money: £{f_number(money)}")
         if highest_bid != 0:
             print(f"\nBid to beat: £{f_number(highest_bid)}     Last bid: £{f_number(old_player_bid)}")
             more = input(f"\nWould you like to raise your bid for the {animal_}?"
@@ -142,12 +148,20 @@ def show_all_money(player_names, player_money):
     print(money_left)
     input("Press Enter to continue.")
 
+def show_all_points(player_names, player_points):
+    total_points = "\nPlayer Scores:\n"
+    for name, points in zip(player_names, player_points):
+        total_points += name + ": " + str(points) + "\n"
+    os.system('clear')
+    print(total_points)
+    input("Press Enter to continue.")
+
 def get_final_winner(player_names, player_points):
     max_points = max(player_points)
     if player_points.count(max_points) > 1:
         all_winners = [player for player, points in zip(player_names, player_points) if points == max_points]
         all_winners_message = [name + f" won with {max_points}" for name in all_winners]
-        return "\nIt was a draw! The winner are: \n" + "\n".join(all_winners_message)
+        return "\nIt was a draw! The winners are: \n" + "\n".join(all_winners_message)
     else:
         return f"\n{player_names[player_points.index(max_points)]} won with {max_points} points!"
 
@@ -166,12 +180,12 @@ def play_game():
         os.system('clear')
         print(f"\nRound {round+1} of {number_of_rounds}")
         player_money, player_points = play_round(player_names, player_money, player_points)
-        os.system('clear')
-        total_points = "\nPlayer Scores:\n"
-        for name, points in zip(player_names, player_points):
-            total_points += name + ": " + str(points) + "\n"
-        print(total_points)
-        input("Press Enter to continue.")
+        show_all_points(player_names, player_points)
+        if all(money == 0 for money in player_money):
+            os.system('clear')
+            print("\nYou've all used up your money!")
+            input("\nPress Enter to continue.")
+            break
     os.system('clear')
     print(get_final_winner(player_names, player_points))
 
