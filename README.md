@@ -6,8 +6,8 @@ This directory houses my earliest coding exercises and CLI games from the first 
 
 ## Most Recommended to Check Out
 
-- bidding_game.py
-- caeser_cipher.py
-- hangman.py
-- rock_paper_scissors.py
-- treasure_island.py
+- [bidding_game.py](bidding_game.py)
+- [caeser_cipher.py](caeser_cipher.py)
+- [hangman.py](hangman.py)
+- [rock_paper_scissors.py](rock_paper_scissors.py)
+- [treasure_island.py](treasure_island.py)
